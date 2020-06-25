@@ -21,7 +21,7 @@ The code was developed in the Eclipse IDE and i haven't had the time to test how
 
   - [x] mock UI implemented in javaFx
   - [x] program layout - MVC pattern established (sort of)
-  - [ ] query logic
+  - [x] query logic - queryRequest objects generated from GUI-inputs
   - [ ] query functionality
   - [ ] JSON-parsing
   - [ ] query caching
