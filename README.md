@@ -13,6 +13,10 @@ The program logic is partially based on an old homework assignment but everythin
 
 It is I hope, however at least something of a proof that I do know java.
 
+### practical information about running program
+
+The code was developed in the Eclipse IDE and i haven't had the time to test how feasible it is to get running outside of that enviorment. _Works on my machine_, no other guarantees.
+
 ### Task list
 
   - [x] mock UI implemented in javaFx
