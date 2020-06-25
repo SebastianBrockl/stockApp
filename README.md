@@ -1,7 +1,8 @@
 # stockApp
 
+This is a somewhat trivial stock "management" application which allows users to perform comparisons between stocks as well as create mock portfolios.
 
-This is a trivial stock "management" application which serves three purposes:
+the goals of this project are:
 
 1. demonstrate my programming ability to potential employers
 2. allow me to familiarize with javaFx and modern Java-developement practices
@@ -9,7 +10,7 @@ This is a trivial stock "management" application which serves three purposes:
 
 ### current state - work in progress - ***non functional***
 
-The program logic is partially based on an old homework assignment but everything has been, or is in the process of being refactored. The program is in a sorry state because my time working on it has been quite short, and progress has been slow since this is my first time using javaFx (quite familiar with swing). I plan on further developing the project over the weekend.
+The program logic is partially based on an old homework assignment but everything has been, or is in the process of being refactored. The program is in a sorry state because my time working on it has been quite short, and progress has been slow since I havent used java in a while, and have never before used javaFx (quite familiar with swing). I plan on further developing the project over the coming weeks.
 
 I hope this is at least an approximation of proof that I have some grasp on the Java language. 
 
