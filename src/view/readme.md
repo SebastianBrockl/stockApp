@@ -1,4 +1,4 @@
-# View package
+# the view package
 
 This package follows the MVC-pattern convention and separates all GUI-related classes into one place
 
