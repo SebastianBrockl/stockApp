@@ -1,10 +1,8 @@
 package controller;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 //system includes
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -15,6 +13,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+
+// project includes
+import utility.QueryRequest;
 
 /**
  * Controller-class for the InputPane.fxml GUI-element
@@ -98,7 +99,8 @@ public class InputPaneController {
 
     @FXML
     void queryButtonPressed(ActionEvent event) {
-    	System.out.println("QUERY!");
+    	generateQuery(symbolInput1);
+    	generateQuery(symbolInput2);
     }
 
     @FXML
@@ -135,6 +137,7 @@ public class InputPaneController {
 		setUpCurrentDate();
 	}
 	
+	// set symbol selection options and default values
 	private void setUpSymbolInput()
 	{
     	symbolInput1.getItems().addAll(
@@ -150,6 +153,7 @@ public class InputPaneController {
     	symbolInput2.setEditable(true);
 	}
 	
+	// set general input options and default values
 	private void setUpOptionsInput()
 	{
 		timeSeriesInput.getItems().addAll(timeSeriesOptions);
@@ -165,11 +169,14 @@ public class InputPaneController {
 		dataSeriesInput.setValue(dataSeriesOptionsLimited.get(0));
 	}
 	
+	// set a default date interval based on local current date
 	private void setUpCurrentDate()
 	{
 		endDateInput.setValue(LocalDate.now());
 		startDateInput.setValue(LocalDate.now().minusDays(5));
+//		System.out.println(startDateInput.getValue().toString());
 	}
+	
 	/**
 	 * Convenience function that updates the contents of the symbol selection comboBoxes if a new value was added
 	 * @param comboBox the ComboBox that was changed
@@ -177,7 +184,7 @@ public class InputPaneController {
 	private void symbolSelectionUpdated(ComboBox<String> comboBox)
 	{
 		String selectedValue = comboBox.getValue();
-		if(symbolOptions.contains(selectedValue))
+		if(symbolOptions.contains(selectedValue) || selectedValue.equals(""))
 		{
 			// do nothing
 			return;
@@ -241,11 +248,14 @@ public class InputPaneController {
 		}		
 	}
 	
+	
+	// disable queries while start-end dates are mismatched or in the future
 	private void validateDateSelection()
 	{
-		if(startDateInput.getValue().isAfter(endDateInput.getValue()))
+		if(startDateInput.getValue().isAfter(endDateInput.getValue()) ||
+				endDateInput.getValue().isAfter(LocalDate.now().plusDays(1)))
 		{
-			// disable query button
+			// invalid parameters -> disable query button
 			queryButton.setDisable(true);
 		}
 		else
@@ -253,6 +263,26 @@ public class InputPaneController {
 			// enable query button
 			queryButton.setDisable(false);
 		}
+	}
+	
+
+	private QueryRequest generateQuery(ComboBox<String> symbolSelection)
+	{
+		QueryRequest request = new QueryRequest();
+		
+		request.setTimeIntervall(timeIntervallInput.getValue());
+		if(timeIntervallInput.isDisabled()) request.setTimeIntervall("");
+		
+		request.setTimeSeries(timeSeriesInput.getValue());
+		request.setOutputSize(outputSizeInput.getValue());
+		request.setOutputSize(outputSizeInput.getValue());
+		
+		request.setStartTime(startDateInput.getValue());
+		request.setEndTime(endDateInput.getValue());
+		
+		request.setSymbol(symbolSelection.getValue());
+				
+		return request;
 	}
 
 }
