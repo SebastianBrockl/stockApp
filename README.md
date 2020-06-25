@@ -9,9 +9,9 @@ This is a trivial stock "management" application which serves three purposes:
 
 ### current state - work in progress - ***non functional***
 
-The program logic is partially based on an old homework assignment but everything has been, or is in the process of being refactored. The program is in a sorry state because my time working on it has been quite short and this is my first time using javaFx (quite familiar with swing). I plan on further developing the project over the weekend.
+The program logic is partially based on an old homework assignment but everything has been, or is in the process of being refactored. The program is in a sorry state because my time working on it has been quite short, and progress has been slow since this is my first time using javaFx (quite familiar with swing). I plan on further developing the project over the weekend.
 
-It is I hope, however at least something of a proof that I do know java.
+I hope this is at least an approximation of proof that I have some grasp on the Java language. 
 
 ### practical information about running program
 
@@ -20,7 +20,7 @@ The code was developed in the Eclipse IDE and i haven't had the time to test how
 ### Task list
 
   - [x] mock UI implemented in javaFx
-  - [x] program layout - MVC pattern established
+  - [x] program layout - MVC pattern established (sort of)
   - [ ] query logic
   - [ ] query functionality
   - [ ] JSON-parsing
