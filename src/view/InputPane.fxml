@@ -40,7 +40,7 @@
                   <Label text="Start Date" GridPane.rowIndex="6" />
                   <Label text="EndDate" GridPane.rowIndex="7" />
                   <ComboBox fx:id="dataSeriesInput" onAction="#dataSeriesAction" prefWidth="150.0" GridPane.columnIndex="1" />
-                  <ComboBox fx:id="timeSeriesInput" onAction="#dataSeriesAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="timeSeriesInput" onAction="#timeSeriesAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <ComboBox fx:id="symbolInput1" onAction="#symbolInputAction1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <ComboBox fx:id="symbolInput2" onAction="#symbolInputAction2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <ComboBox fx:id="timeIntervallInput" onAction="#timeIntervallAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
